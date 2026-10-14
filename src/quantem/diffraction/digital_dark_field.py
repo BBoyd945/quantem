@@ -931,4 +931,8 @@ def plot_cluster_scatter(
     for k in range(n_show):
         m = labels == k
         ax.scatter(q1[m], q0[m], s=point_size, color=cmap(hues[k]), lw=0, alpha=alpha)
+
+        if np.any(m):
+          ax.annotate(str(k), xy=(q1[m].mean, q0[m].mean()), xytext-(4,4), textcoords="offset points", fontsize=8, color=cmap(hues[k]), bbox=dict(facecolor="white", edgecolor="none", alpha=0.7)
+                      
     return fig, ax
